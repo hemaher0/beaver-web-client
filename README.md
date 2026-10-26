@@ -1,8 +1,11 @@
-# 📈소매업자를 위한 데이터 분석 서비스
+# 비버.ai 웹 클라이언트
 
 ## 프로젝트 소개
 
-비버.ai는 소매업자들이 데이터를 기반으로 더 정확한 비즈니스 결정을 내릴 수 있도록 지원하는 데이터 분석 서비스입니다. 분석한 데이터 분석을 간단하고 직관적인 llm과 결합시켜 제공함으로써, 사용자가 데이터에서 의미 있는 인사이트를 쉽게 추출할 수 있도록 돕습니다. 이 서비스는 특히 데이터 분석에 익숙하지 않은 소매업자들에게 맞춤화되어 있으며, 비즈니스 운영에 필요한 정보를 시각적으로 표현하여 제공합니다.
+비버.ai는 소매업자가 데이터를 업로드하고 자연어로 질문해 분석 결과를 확인하는 팀 프로젝트입니다. 이 저장소는 웹 클라이언트의 개인 포크입니다. 분석과 답변 생성은 서버에서 처리하고, 클라이언트는 파일 업로드, 채팅, 문서·테이블 조회, 요약과 차트 표시를 담당합니다.
+
+- 개발 기간: 2023.09.26~2024.02.27
+- 팀 저장소: [beaver-web-client](https://github.com/inha-carbon-neutral-seven/beaver-web-client)
 
 ## 팀원 구성 및 역할 분담
 
@@ -11,79 +14,28 @@
 | [<img src="https://avatars.githubusercontent.com/u/100016044?v=4" height=150 width=150> <br/> @KangmoonSeo](https://github.com/KangmoonSeo) | [<img src="https://avatars.githubusercontent.com/u/80192345?v=4" height=150 width=150> <br/> @highcloud100](https://github.com/highcloud100) | [<img src="https://avatars.githubusercontent.com/u/117180508?v=4" height=150 width=150> <br/> @ColdTbrew](https://github.com/ColdTbrew) | [<img src="https://avatars.githubusercontent.com/u/69228100?v=4" height=150 width=150> <br/> @hemaher0](https://github.com/hemaher0) | [<img src="https://avatars.githubusercontent.com/u/136104922?v=4" height=150 width=150> <br/> @ChoiBoKeun1](https://github.com/ChoiBoKeun1) |
 |                                  팀장<br/> 웹 서버 개발 </br> LLM 결합 로직 개발</br> 모델 서버 관리 </br>                                  |                                       웹 개발 환경 구축</br> 개발 CI/CD 관리 </br> 모델 서버 및 최적화                                       |                                     오픈 소스 모델 평가<br> LLM 로직 개발 지원 </br> 모델 서버 관리                                     |                       클라이언트 개발 </br> 대시보드 기획 </br> 대시보드 인터페이스 제작</br> 형태소 분석 기획                       |                                  클라이언트 개발</br> 클라이언트 프로젝트 관리 </br> 채팅 인터페이스 제작                                   |
 
-## 개발 기간
+### 프론트엔드 기여 구분
 
-2023.09.26~2024.02.27
-
-## 서비스 아키텍처
-
-<img src="https://raw.githubusercontent.com/inha-carbon-neutral-seven/beaver-web-client/38a00bd4a568ac22022d60abc8eee145ee76b663/src/image/Architecture.png"/>
-
-## 프론트 엔드 개발 환경
-
-### 채택 기술
-
-- 기본적인 웹 구조를 위한 HTML
-- 반응형 UI을 위한 <a href="https://tailwindcss.com/">Tailwind CSS</a>
-- 사용자 인터페이스 구축을 위한 <a href="https://react.dev/">React</a>
-- 아이콘 사용을 위한 <a href="https://fontawesome.com/">Fontawesome</a>
-- 데이터 시각화를 위한 <a href="https://apexcharts.com/">ApexChart.js</a>
-- 복잡한 데이터 테이블 관리를 위한 <a href="https://mui.com/x/react-data-grid/">MUI X Data Grid</a>
-- 문서 뷰어 기능을 위한 <a href="https://www.npmjs.com/package/@cyntler/react-doc-viewer">DocViewer.js</a>
-
-### 채택한 개발 기술의 이유
-
-- React
-  - 컴포넌트 기반 아키텍처를 통해, 재사용 가능한 UI 구성 요소를 생성함으로써 개발 효율성을 크게 향상시키고, 애플리케이션의 유지보수를 용이하게 합니다. 또한, 가상 DOM을 사용하여 실제 DOM의 업데이트를 최적화하므로, 사용자 경험을 개선합니다.
-- Redux
-  - 전역 상태 관리 라이브러리로서, React 컴포넌트 간의 상태 공유 문제를 해결합니다. 복잡한 애플리케이션에서도 일관된 상태를 유지하며, 디버깅과 테스트가 용이합니다.
-- Tailwind CSS
-  - 유틸리티-퍼스트 접근 방식을 채택하여, 개발자가 빠르게 반응형 디자인을 구현할 수 있게 해주며, 맞춤형 디자인을 쉽게 적용할 수 있습니다. 복잡한 CSS를 직접 작성하는 대신, 필요한 스타일을 HTML 요소에 직접 적용함으로써 개발 시간을 단축합니다.
-- FontAwesome
-  - 방대한 아이콘 컬렉션을 제공함으로써, 웹 애플리케이션에 필요한 다양한 아이콘을 손쉽게 찾아 사용할 수 있습니다. 이는 UI의 시각적 appeal과 사용자 경험을 향상시킵니다.
-- ApexCharts.js
-  - 동적 데이터 시각화를 위한 강력한 라이브러리입니다. 사용하기 쉽고, 다양한 유형의 차트와 그래프를 지원하여, 데이터를 직관적으로 표현할 수 있게 합니다. 또한, 고도로 커스터마이즈할 수 있어, 애플리케이션의 디자인과 완벽하게 일치시킬 수 있습니다.
-- MUI X React Data Grid
-  - 대규모 데이터셋을 관리하고 표시하는 데 최적화된 컴포넌트입니다. 필터링, 정렬, 페이징과 같은 고급 기능을 내장하고 있어, 사용자가 데이터를 쉽게 탐색하고 분석할 수 있습니다.
-- React DocViewer
-  - 다양한 형식의 문서를 웹 애플리케이션 내에서 직접 렌더링하고 표시할 수 있게 해주는 도구입니다. 이를 통해 사용자는 별도의 소프트웨어 설치 없이도 문서 내용을 쉽게 접근하고 열람할 수 있습니다.
+- **강민우 (@hemaher0)**: 대시보드 기획과 인터페이스 개발을 담당했습니다. 서버에서 받은 차트 데이터를 Redux 상태와 대시보드 사이드바에 연결했고([f584c5b](https://github.com/hemaher0/beaver-web-client/commit/f584c5b8824d20fd6ce48c17461be6f12fed73d9)), 기존 코드·출력 표시 UI의 레이아웃과 스크롤 처리를 수정했습니다([0b18980](https://github.com/hemaher0/beaver-web-client/commit/0b18980260b1e07185c8d3213e238eb817ab8ee2)).
+- **최보근 (@ChoiBoKeun1)**: 채팅 인터페이스와 클라이언트 프로젝트 관리를 담당했습니다. 답변의 코드와 출력을 보여주는 `MessageSource` 컴포넌트를 처음 추가했습니다([2503d06](https://github.com/hemaher0/beaver-web-client/commit/2503d060d1d0f59c678d719969acb5d99c784c4e)).
 
 ## 서비스 아키텍처
 
 <img src="https://raw.githubusercontent.com/inha-carbon-neutral-seven/beaver-web-client/38a00bd4a568ac22022d60abc8eee145ee76b663/src/image/Architecture.png"/>
 
-## 프론트 엔드 개발 환경
+## 프론트엔드 개발 환경
 
-### 채택 기술
-
-- 기본적인 웹 구조를 위한 HTML
-- 반응형 UI을 위한 <a href="https://tailwindcss.com/">Tailwind CSS</a>
-- 사용자 인터페이스 구축을 위한 <a href="https://react.dev/">React</a>
-- 아이콘 사용을 위한 <a href="https://fontawesome.com/">Fontawesome</a>
-- 데이터 시각화를 위한 <a href="https://apexcharts.com/">ApexChart.js</a>
-- 복잡한 데이터 테이블 관리를 위한 <a href="https://mui.com/x/react-data-grid/">MUI X Data Grid</a>
-- 문서 뷰어 기능을 위한 <a href="https://www.npmjs.com/package/@cyntler/react-doc-viewer">DocViewer.js</a>
-
-### 채택한 개발 기술의 이유
-
-- React
-  - 컴포넌트 기반 아키텍처를 통해, 재사용 가능한 UI 구성 요소를 생성함으로써 개발 효율성을 크게 향상시키고, 애플리케이션의 유지보수를 용이하게 합니다. 또한, 가상 DOM을 사용하여 실제 DOM의 업데이트를 최적화하므로, 사용자 경험을 개선합니다.
-- Redux
-  - 전역 상태 관리 라이브러리로서, React 컴포넌트 간의 상태 공유 문제를 해결합니다. 복잡한 애플리케이션에서도 일관된 상태를 유지하며, 디버깅과 테스트가 용이합니다.
-- Tailwind CSS
-  - 유틸리티-퍼스트 접근 방식을 채택하여, 개발자가 빠르게 반응형 디자인을 구현할 수 있게 해주며, 맞춤형 디자인을 쉽게 적용할 수 있습니다. 복잡한 CSS를 직접 작성하는 대신, 필요한 스타일을 HTML 요소에 직접 적용함으로써 개발 시간을 단축합니다.
-- FontAwesome
-  - 방대한 아이콘 컬렉션을 제공함으로써, 웹 애플리케이션에 필요한 다양한 아이콘을 손쉽게 찾아 사용할 수 있습니다. 이는 UI의 시각적 appeal과 사용자 경험을 향상시킵니다.
-- ApexCharts.js
-  - 동적 데이터 시각화를 위한 강력한 라이브러리입니다. 사용하기 쉽고, 다양한 유형의 차트와 그래프를 지원하여, 데이터를 직관적으로 표현할 수 있게 합니다. 또한, 고도로 커스터마이즈할 수 있어, 애플리케이션의 디자인과 완벽하게 일치시킬 수 있습니다.
-- MUI X React Data Grid
-  - 대규모 데이터셋을 관리하고 표시하는 데 최적화된 컴포넌트입니다. 필터링, 정렬, 페이징과 같은 고급 기능을 내장하고 있어, 사용자가 데이터를 쉽게 탐색하고 분석할 수 있습니다.
-- React DocViewer
-  - 다양한 형식의 문서를 웹 애플리케이션 내에서 직접 렌더링하고 표시할 수 있게 해주는 도구입니다. 이를 통해 사용자는 별도의 소프트웨어 설치 없이도 문서 내용을 쉽게 접근하고 열람할 수 있습니다.
+- HTML, [React](https://react.dev/): 화면과 컴포넌트 구성
+- Redux: 채팅, 업로드 파일, 분석 결과 및 서버 연결 상태 공유
+- [Tailwind CSS](https://tailwindcss.com/): 화면 스타일과 다크 모드
+- [FontAwesome](https://fontawesome.com/): 아이콘
+- [ApexCharts.js](https://apexcharts.com/): 서버에서 받은 차트 데이터 표시
+- [MUI X Data Grid](https://mui.com/x/react-data-grid/): CSV 테이블 표시와 필터링
+- [React DocViewer](https://www.npmjs.com/package/@cyntler/react-doc-viewer): 업로드한 문서 표시
 
 ## 코드 구현
 
-<a href="https://github.com/inha-carbon-neutral-seven/beaver-web-client/wiki/%EC%BD%94%EB%93%9C-%EA%B5%AC%ED%98%84-%EC%9D%98%EB%8F%84-%EB%B0%8F-%EC%A0%95%EB%A6%AC"><--코드 설명--></a>
+[코드 설명](https://github.com/inha-carbon-neutral-seven/beaver-web-client/wiki/%EC%BD%94%EB%93%9C-%EA%B5%AC%ED%98%84-%EC%9D%98%EB%8F%84-%EB%B0%8F-%EC%A0%95%EB%A6%AC)
 
 ## 클라이언트 실행 방법
 
@@ -110,6 +62,8 @@ npm install
 ```bash
 npm start
 ```
+
+실행에는 Node.js와 npm이 필요합니다. `npm start`는 클라이언트 개발 서버를 실행합니다. 파일 분석과 채팅 응답을 사용하려면 별도의 웹·모델 서버에 연결되어야 합니다. API 주소는 `FileUploadToServer.js`, `UserInput.js`, `ServerStateIndicator.js`에 작성되어 있습니다.
 
 ## 페이지 및 화면 구성
 
